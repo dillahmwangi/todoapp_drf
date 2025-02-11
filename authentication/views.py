@@ -10,6 +10,7 @@ from django.contrib.auth import authenticate
 
 class AuthUserAPIView(GenericAPIView):
     permission_classes = [permissions.IsAuthenticated]
+    
 
     def get(self,request):
         user = request.user
@@ -18,6 +19,7 @@ class AuthUserAPIView(GenericAPIView):
 
 
 class RegisterAPIView(GenericAPIView):
+    authentication_classes=[]
     
     serializer_class = RegisterSerializer
     
@@ -31,6 +33,7 @@ class RegisterAPIView(GenericAPIView):
         return response.Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 class LoginAPIView(GenericAPIView):
+    authentication_classes = []
     
     serializer_class = LoginSerializer
     
