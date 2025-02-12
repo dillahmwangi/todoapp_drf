@@ -55,7 +55,7 @@ class TestListCreateTodos(APITestCase):
 class TestTodoDetailView(APITestCase):
     
     def test_retrieves_one_item(self):
-        pass
+         pass
     
     def test_updates_one_item(self):
         pass
